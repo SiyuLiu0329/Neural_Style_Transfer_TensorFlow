@@ -1,0 +1,5 @@
+__pycache__/
+imagenet-vgg-verydeep-19.mat
+img/
+results/
+synset.txt
