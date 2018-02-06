@@ -38,5 +38,7 @@ A (kind of inefficent) image loading and preprocessing function *(load_image)* i
 - Preprocess the input image by passing in *preprocess=True* - subtract the vgg-means from the RGB channels of the input image.
 
 
-
+# TODO
+- TensorFlow Saver
+- More effective image resizing functio
 
