@@ -24,18 +24,18 @@ model = NSTModel(content_path='content_img_path', style_path='style_img_path')
 model.run()
 ```
 
-The default image size is 224*224. Feel free to try out any other size you like, make sure that the content image and the style image are the same size.
+The default image size is 224*224. Feel free to try out other sizes, make sure that the content image and the style image are the same size.
 
 ## Loading and preprocessing images
 A (kind of inefficent) image loading and preprocessing function *(load_image)* is provided in [utilities.py](https://github.com/SiyuLiu0329/Neural_Style_Transfer_TensorFlow/blob/master/utilities.py). Use this function to
 
 - Resizing the input image by padding or cropping, pass in a new size *shape=[height, width]*. Resizing is NOT recommended!
 
-- Convert the input image to BGR format when passing in *bgr=True* - this conversion is required by some VGG models. Does not seem to make a difference with the weights used in the projects.
+- Convert the input image to BGR format by passing in *bgr=True* - this conversion is required by some VGG models. Does not seem to make a difference with the weights used in the projects.
 
-- Show the output image in a new window when passing in *show_img=True* - Cannot be used with image preprocessing as negative-valued pixels will not be displayed properly.
+- Show the output image in a new window by passing in *show_img=True* - Cannot be used with image preprocessing as negative-valued pixels will not be displayed properly.
 
-- Preprocess the input image when passing in *preprocess=True* - subtract the vgg-means from the RGB channels of the input image.
+- Preprocess the input image by passing in *preprocess=True* - subtract the vgg-means from the RGB channels of the input image.
 
 
 
