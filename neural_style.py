@@ -8,7 +8,7 @@ import scipy.misc
 
 
 class NSTModel():
-    def __init__(self, output_layer='conv5_2', h=300, w=400, style_path=None, content_path=None, input_image_path=None, style_weights=[0.5, 1, 2, 3, 4]):
+    def __init__(self, output_layer='conv5_2', h=300, w=400, style_path=None, content_path=None, input_image_path=None, style_weights=[0.5, 1.0, 2.1, 3.2, 4.0]):
         '''
         :param output_layer: layer to use when computing content loss
         :param h: height of image
