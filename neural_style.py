@@ -70,12 +70,12 @@ class NSTModel():
 
         self._sess.run(tf.global_variables_initializer())
         self._sess.run(self._vgg.tf_layers['input'].assign(self._generated_img))
-        for i in range(num_iter):
+        for i in range(1, num_iter + 1):
 
             optimizer.minimize(self._sess)
             generated_img = self._sess.run(self._vgg.tf_layers['input'])
             current_loss = self._sess.run(total_loss)
-            print('Iter' + str(i) + '0, Loss: ' + str(current_loss))
+            print('Iter ' + str(i) + '0, Loss: ' + str(current_loss))
             self._save_image(output_folder + "/" + str(i * 10) + ".png", generated_img)
 
         self._sess.close()
