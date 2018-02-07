@@ -40,5 +40,5 @@ A (kind of inefficent) image loading and preprocessing function *(load_image)* i
 
 # TODO
 - TensorFlow Saver
-- More effective image resizing functio
+- More effective image resizing function
 
