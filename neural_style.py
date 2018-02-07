@@ -156,7 +156,7 @@ class NSTModel():
         '''
         op_assign_style_img = self._vgg.tf_layers['input'].assign(self._style_img)
         self._sess.run(op_assign_style_img)
-        for layer, coeff in self.STYLE_LAYERS:
+        for layer, _ in self.STYLE_LAYERS:
             out = self._vgg.tf_layers[layer]
             self._style_features.append(self._sess.run(out))
 
