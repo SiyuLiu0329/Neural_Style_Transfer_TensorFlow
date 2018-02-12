@@ -123,8 +123,9 @@ class Model:
             
         else:
             layer = tf.nn.relu(layer)
-        
-        layer = tf.nn.dropout(layer, 0.5)
+            
+        if self.trainable_fc:
+            layer = tf.nn.dropout(layer, 0.5)
 
         self.tf_layers[layer_name] = layer
         return layer
