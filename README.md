@@ -1,8 +1,7 @@
 # Neural style transfer in TensorFlow
 
-<img src="demo/style1.jpg" width="200">
-<img src="demo/content1.jpg" width="200">
-
+<img src="demo/style1.jpg" width="200"><img src="demo/content1.jpg" width="200">
+<p>
 <img src="demo/res1.png" width="400">
 
 
