@@ -117,12 +117,14 @@ class Model:
         W = tf.reshape(W, [-1, W.get_shape().as_list()[-1]])
         layer = tf.matmul(prev, W)
         layer = tf.nn.bias_add(layer, bias)
-        
+
         if is_output:
             layer = tf.nn.softmax(layer)
             
         else:
             layer = tf.nn.relu(layer)
+        
+        layer = tf.nn.dropout(layer, 0.5)
 
         self.tf_layers[layer_name] = layer
         return layer
