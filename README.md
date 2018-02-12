@@ -11,7 +11,7 @@
 <img src="demo/res2.png" width="800">
 
 ### Example 3
-<img src="demo/style3.jpg" width="400"><img src="demo/content3.jpg" width="400">
+<img src="demo/style3.jpg" height="280"><img src="demo/content3.jpg" height="280">
 <p>
 <img src="demo/res3.png" width="800">
 
@@ -21,7 +21,7 @@
 <img src="demo/res4.png" width="800">
 
 ### Example 5
-<img src="demo/style5.jpg" width="400"><img src="demo/content5.jpg" width="400">
+<img src="demo/style5.jpg" height="330"><img src="demo/content5.jpg" height="330">
 <p>
 <img src="demo/res5.png" width="800">
 
