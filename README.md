@@ -1,8 +1,8 @@
 # Neural style transfer in TensorFlow
 
-<img src="demo/style1.jpg" width="200"><img src="demo/content1.jpg" width="200">
+<img src="demo/style1.jpg" width="300"><img src="demo/content1.jpg" width="300">
 <p>
-<img src="demo/res1.png" width="400">
+<img src="demo/res1.png" width="600">
 
 
 A TensorFlow implementation of [neural style transfer](https://arxiv.org/pdf/1508.06576.pdf) with [VGG19](https://arxiv.org/pdf/1409.1556.pdf) (a [working version](https://github.com/SiyuLiu0329/Neural_Style_Transfer_TensorFlow/blob/master/vgg_model.py) of VGG19 is also included). This implementation is inspired by a deep learning course developed by [deeplearning.ai](https://www.deeplearning.ai). The default hyper parameters used in the [model file](https://github.com/SiyuLiu0329/Neural_Style_Transfer_TensorFlow/blob/master/neural_style.py) have been fine tuned with the help of this great [paper](https://arxiv.org/pdf/1705.04058.pdf) so the model should be able produce satisfactory results with most style-content combinations.
