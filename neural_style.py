@@ -8,7 +8,7 @@ import scipy.misc
 
 
 class NSTModel():
-    def __init__(self, output_layer='conv5_2', h=300, w=400, style_path=None, content_path=None, input_image_path=None, style_weights=[0.5, 1.0, 2.1, 3.2, 4.0]):
+    def __init__(self, output_layer='conv5_2', h=300, w=400, style_path=None, content_path=None, input_image_path=None, style_weights=[0.5, 1.0, 2.1, 3.2, 4.0], checkpoint_meta=None):
         '''
         :param output_layer: layer to use when computing content loss
         :param h: height of image
@@ -65,18 +65,19 @@ class NSTModel():
         total_loss = beta * content_loss + alpha * style_loss
 
         # L-BFGS-B generates better results than Adam in this use case
-        optimizer = tf.contrib.opt.ScipyOptimizerInterface(total_loss, 
-        method='L-BFGS-B', options={'maxiter': 10})
-
+        optimizer = tf.contrib.opt.ScipyOptimizerInterface(total_loss, method='L-BFGS-B', options={'maxiter': 10})
         self._sess.run(tf.global_variables_initializer())
+
         self._sess.run(self._vgg.tf_layers['input'].assign(self._generated_img))
         for i in range(1, num_iter + 1):
-
+            step = i * 10
             optimizer.minimize(self._sess)
             generated_img = self._sess.run(self._vgg.tf_layers['input'])
             current_loss = self._sess.run(total_loss)
-            print('Iter ' + str(i) + '0, Loss: ' + str(current_loss))
-            self._save_image(output_folder + "/" + str(i * 10) + ".png", generated_img)
+            print('Iter ' + str(step) + 'Loss: ' + str(current_loss))
+            self._save_image(output_folder + "/" + str(step) + ".png", generated_img)
+            if step ==  num_iter:
+                break
 
         self._sess.close()
 
