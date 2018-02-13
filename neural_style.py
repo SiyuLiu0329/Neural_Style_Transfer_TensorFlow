@@ -76,7 +76,7 @@ class NSTModel():
             current_loss = self._sess.run(total_loss)
             print('Iter ' + str(step) + ' Loss: ' + str(current_loss))
             self._save_image(output_folder + "/" + str(step) + ".png", generated_img)
-            if step <=  num_iter:
+            if step >=  num_iter:
                 break
 
         self._sess.close()
