@@ -1,11 +1,10 @@
 import scipy.misc
 import matplotlib.pyplot as plt
-from matplotlib.pyplot import imshow
 import numpy as np
 
 import tensorflow as tf
 
-def load_image(path, shape=None, show_img=False, bgr=False, preprocess=False):
+def load_image(path, shape=None, bgr=False, preprocess=False, use_crop_or_pad=False):
     image = scipy.misc.imread(path)
 
     if preprocess:
@@ -20,19 +19,16 @@ def load_image(path, shape=None, show_img=False, bgr=False, preprocess=False):
         image = image[:,:,::-1]
     
     if shape:
-        image = tf.image.resize_image_with_crop_or_pad(image, shape[0], shape[1])
-        image = tf.reshape(image, [1, shape[0], shape[1], 3])
-    else:
-        image = tf.convert_to_tensor(image)
-        
-    if show_img:
-        imshow(image)
-        plt.show()
+        if use_crop_or_pad:
+            image = tf.image.resize_image_with_crop_or_pad(image, shape[0], shape[1])
+        else:
+            image = tf.image.resize_images(image, [shape[0], shape[1]])
 
-    with tf.Session() as sess:
-        sess.run(tf.global_variables_initializer())
-        image = image.eval()
-        sess.close()
+        image = tf.reshape(image, [1, shape[0], shape[1], 3])
+        with tf.Session() as sess:
+            sess.run(tf.global_variables_initializer())
+            image = image.eval()
+            sess.close()
 
     return image
 

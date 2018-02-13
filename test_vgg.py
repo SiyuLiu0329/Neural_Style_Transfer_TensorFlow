@@ -5,7 +5,7 @@ import numpy as np
 from utilities import predict
 
 # Load image, need to specify the path
-image = load_image('img/gr.jpg', shape=[224, 224], preprocess=True, bgr=False)
+image = load_image('img/gr.jpg', shape=[224, 224], preprocess=True, bgr=False, use_crop_or_pad=True)
 model = Model('imagenet-vgg-verydeep-19.mat')
 out = model.build_model()
 with tf.Session() as sess:
