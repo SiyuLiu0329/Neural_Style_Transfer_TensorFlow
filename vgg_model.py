@@ -5,12 +5,6 @@ import numpy as np
 class Model:
     def __init__(self, wieght_path, img_h=224, img_w=224, trainable_fc=False):
         vgg_weights = sio.loadmat(wieght_path)
-        '''
-        :param weight_path: file location of 'imagenet-vgg-verydeep-19.mat'
-        :param img_h: height of the input image (224 by default)
-        :param img_w: width of the input image (224 by default)
-        :param trainable_fc: make the fully connected layer trainable/untrainable
-        '''
 
         # self._loaded_layers[layer_idx][0][0][i]
         #   i = 0 -> layer name
