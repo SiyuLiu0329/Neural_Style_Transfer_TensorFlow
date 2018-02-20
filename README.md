@@ -87,8 +87,7 @@ Iter = 460 (Left) and iter = 1110 (Right).
 <p>
 
 
-# TODO
-- TensorFlow Saver
-- More effective image resizing function
+# TODO'
+- Better Documentation when I have time
 - Possible GPU version
 
