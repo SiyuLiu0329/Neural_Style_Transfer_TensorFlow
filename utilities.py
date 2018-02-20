@@ -5,6 +5,21 @@ import numpy as np
 import tensorflow as tf
 
 def load_image(path, shape=None, bgr=False, preprocess=False, use_crop_or_pad=False):
+    """Loads an image from path and provides options to pre-process and normalise it
+
+    Args:
+        path (str): Path of the image
+        shape (:obj:`list` of 2 :obj: `int`): List of 2 integers representing height and width,
+                                      the image will be rescaled as per `shape` if `shape` is
+                                      specified
+        bgr (bool): The image will be converted to 'bgr' format if True
+        preprocess (bool): Subtract the vgg-means from the channels of the image if True
+        use_crop_or_pad: Rescale the image by padding or cropping if True, else `BILINEAR` by default
+    
+    Returns:
+        A numpy array of shape (1, height, width, 3)
+
+    """
     image = scipy.misc.imread(path)
 
     if preprocess:
